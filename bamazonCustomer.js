@@ -6,8 +6,7 @@ var connection = mysql.createConnection({
     password: 'root',
     database: 'bamazon_db',
     port: '3306'
-});
-
+})
 
 function iWork (value) {
     var integer = Number.isInteger(parseFloat(value))
@@ -24,7 +23,7 @@ if (integer && (sign ===1)){
 function selectInventory() {
   config.query("SELECT * FROM product_query", function(e, res) {
     if (e) throw e;
-    console.log("I'm a terminal. I am a terminal component of terminal ordering. Basically, I Will be your terminal to Bamazon!");
+    console.log("Hi I'm a terminal. I am a terminal component of terminal ordering. Basically, I Will be your terminal to Bamazon!");
     console.log("-------------------------------------------------------\n");
     for (var i = 0; i < res.length; i++) {
       console.log(
@@ -44,10 +43,12 @@ function selectInventory() {
           res[i].stock_quantity +
           "\n"
       );
-    }        console.log("-------------------------------------------------------\n")
-        inquirePurchase()
-        });
-        }
+    }
+
+    console.log("-------------------------------------------------------\n");
+    inquirePurchase();
+  });
+}
  function terminalPurchase(){
      inquire.prompt([{
          
